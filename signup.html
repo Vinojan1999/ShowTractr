@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Sign up page </title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<style>
+
+</style>
+</head>
+
+<body style="background:#ccc;">
+
+  <nav class="navbar navbar-defaulf">
+   <div class="container-fluid"style="background-color:white;">
+     <div class="navbar-header">
+       <a class="navbar-brand" style="background-color:#F7E224; color:black;" href="/index.html">
+       <span class="glyphicon glyphicon-film"> </span>
+        Show<strong>Trackr</strong></a>
+     </div>
+
+     <ul class=" nav navbar-nav">
+      <li class="active"><a style="color:black;" href="/index.html"> Home </a></li>
+      <li class="active"><a style="color:black;" href="/add.html"> Add </a></li>
+     </ul>
+
+     <ul class="nav navbar-nav navbar-right">
+      <li style="float:right"><a style="color:black;" href="/login.html"> Log In </a></li>
+      <li style="float:right"><a style="color:black;" href="/signup.html"> Sign up </a></li>
+     </ul>
+   </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="row" style="height: 700px; background-color: #cccccc;">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6" style="background-color:white; width:600px; height: 550px;">
+      <h1 style="text-align:center;"><b> Sign up </b></h1>
+      <br>
+
+      <div class="col">
+        <center>
+
+        <input type="text" class="fa fa-user form-control" style="width:398px; height:40px;" id="user" placeholder="Name"><br>
+         <span id="username" class="text-danger" style="font-weight: bold;">  </span>
+         <br><br>
+
+        <input type="text" class="form-control" style="width:400px; height:40px;" id="email" placeholder="@ Email">
+
+         <span id="emailid" class="text-danger" style="font-weight: bold;"></span>
+        <br><br>
+
+        <input type="password" class="form-control" style="width:400px; height:40px;" id="pass" placeholder="&#9911; Password">
+
+         <span id="pwd" class="text-danger" style="font-weight: bold;"></span>
+        <br><br>
+
+          <p style="text-align:center;"> By clicking on Sign up, you agree to <a href="#"><b> terms & <br> conditions </b></a> and <a href="#"><b> privacy policy </b></a> </p>
+
+        <button type="button" class="btn btn-info" style="width:400px; height:40px;" onclick="validation()"> Sign up </button>
+
+
+<script type="text/javascript">
+
+  function validation(){
+
+    var name = document.getElementById('user').value;
+    var email = document.getElementById('email').value;
+    var pass = document.getElementById('pass').value;
+
+
+
+    if(name == ""){
+      document.getElementById('username').innerHTML = "** Your usernameis required,!!";
+      return false;
+    }
+    if((name.length <= 3) || (name.length > 20)) {
+      document.getElementById('username').innerHTML = "** Username length must be between 3 and 20";
+      return false;
+    }
+    if(!isNaN(name)) {
+      document.getElementById('username').innerHTML = "** Only characters are allowed";
+      return false;
+    }
+
+
+
+
+    if(email == ""){
+      document.getElementById('emailid').innerHTML = "** Your E-mail address is required,!!";
+      return false;
+    }
+    if(email.indexOf('@') <= 0) {
+      document.getElementById('emailid').innerHTML = "** @ Invalid Position";
+      return false;
+    }
+    if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.')) {
+      document.getElementById('emailid').innerHTML = "** . Invalid Position";
+      return false;
+    }
+
+
+
+
+    if(pass == ""){
+      document.getElementById('pwd').innerHTML = "** Your Passwordis required,!!";
+      return false;
+    }
+    if((pass.length <= 6) || (pass.length > 20)) {
+      document.getElementById('pwd').innerHTML = "** Password length must be between 6 and 20";
+      return false;
+    }
+
+
+
+    else {
+      document.getElementById('username').innerHTML = "";
+    }
+
+
+
+  }
+
+</script>
+
+        <br> <br>
+
+          <p style="text-align:center;"> Already have an account? <a href="/login.html"><b> Log in now</b> </a> </p>
+
+
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<script type="text/javascript" src="js/sign_up.js"></script>
+<script type="text/javascript" src="js/email.js"></script>
+<script type="text/javascript" src="js/user_name.js"></script>
+<script type="text/javascript" src="js/password.js"></script>
+<script type="text/javascript" src="js/password_strength.js"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Log in page </title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<style>
+
+.fb {
+  background-color: #3B5998;
+  color: white;
+  width:400px;
+  height:35px;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+  width:400px;
+  height:35px;
+}
+
+.fb:hover {
+  color: yellow;
+}
+
+.google:hover {
+  color: yellow;
+}
+
+
+</style>
+</head>
+
+<body style="background:#ccc; height: 700px;">
+
+  <nav class="navbar navbar-defaulf">
+   <div class="container-fluid"style="background-color:white;">
+     <div class="navbar-header">
+       <a class="navbar-brand" style="background-color:#F7E224; color:black;" href="/index.html"> 
+       <span class="glyphicon glyphicon-film"> </span>
+        Show<strong>Trackr</strong></a>
+     </div>
+
+     <ul class=" nav navbar-nav">
+      <li class="active"><a style="color:black;" href="/index.html"> Home </a></li>
+      <li class="active"><a style="color:black;" href="/add.html"> Add </a></li>
+     </ul>
+
+     <ul class="nav navbar-nav navbar-right">
+      <li style="float:right"><a style="color:black;" href="/login.html"> Log In </a></li>
+      <li style="float:right"><a style="color:black;" href="/signup.html"> Sign up </a></li>
+     </ul>
+   </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6" style="background-color:white; width:600px; height:550px;">
+      <h1 style="text-align:center;"><b> Log In </b></h1>
+      <br>
+
+      <div class="col">
+        <center>
+
+        <input type="text" class="form-control" style="width:400px; height:40px;" id="email" placeholder="@ Email">
+        <span id="emailid" class="text-danger" style="font-weight: bold;"></span>
+        <br><br>
+
+        <input type="password" class="form-control" style="width:400px; height:40px;" id="pass" placeholder="&#9911; PASSWORD">
+        <span id="pwd" class="text-danger" style="font-weight: bold;"></span>
+        <br><br>
+
+        <button type="button" class="btn btn-success" style="width:400px; height:40px;" onclick="validation()"> Log in </button> <br> <br>
+
+
+
+<script type="text/javascript">
+
+  function validation(){
+    var email = document.getElementById('email').value;
+    var pass = document.getElementById('pass').value;
+
+
+
+    if(email == ""){
+      document.getElementById('emailid').innerHTML = "** Your E-mail address is required,!!";
+      return false;
+    }
+    if(email.indexOf('@') <= 0) {
+      document.getElementById('emailid').innerHTML = "** @ Invalid Position";
+      return false;
+    }
+    if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.')) {
+      document.getElementById('emailid').innerHTML = "** . Invalid Position";
+      return false;
+    }
+
+
+
+    if(pass == ""){
+      document.getElementById('pwd').innerHTML = "** Your Passwordis required,!!";
+      return false;
+    }
+    if((pass.length <= 6) || (pass.length > 20)) {
+      document.getElementById('pwd').innerHTML = "** Password length must be between 6 and 20";
+      return false;
+    }
+  }
+
+</script>
+
+
+        <p style="text-align:center;"><b> Forgot your password? </b></p>
+               <br>
+        <p style="text-align:center;">Don't have an account yet? <a href="/signup.html"><b> Sign up </b></a></p>
+
+        <hr class="hr-text" data-content="OR">
+
+        <div class="col">
+          <a href="#" class="fb btn">
+            <i class="fa fa-facebook fa-fw"></i> Sign in with Facebook
+          </a><br> <br>
+          <a href="#" class="google btn">
+            <i class="fa fa-google fa-fw"></i> Sign in with Google
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </div> 
+  </div>
+
+
+  <script type="text/javascript" src="js/sign_up.js"></script>
+  <script type="text/javascript" src="js/email.js"></script>
+  <script type="text/javascript" src="js/user_name.js"></script>
+  <script type="text/javascript" src="js/password.js"></script>
+  <script type="text/javascript" src="js/password_strength.js"></script>
+  
+  
+  
+  
+  </body>
+  </html>

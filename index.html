@@ -1,0 +1,323 @@
+<!--======================================START_PROGRAMMING===========================================-->
+<!DOCTYPE html>
+<html>
+<head>
+<!--========================================NAVBAR_HEAD_LINE==========================================-->
+  <title>Home - ShowTractr </title>
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" text="text/css" href="/css/main.css">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!--===================================================================================================-->
+<style type="text/css">
+  .filterDiv{
+    display: none;
+  }
+  .show{
+    display: block;
+  }
+</style>
+</head>
+
+<body style="background:#ccc;">
+
+  <nav class="navbar navbar-defaulf">
+   <div class="container-fluid"style="background-color:white;">
+     <div class="navbar-header">
+       <a class="navbar-brand" style="background-color:#F7E224; color:black;" href="/"> 
+       <span class="glyphicon glyphicon-film"> </span>
+        Show<strong>Trackr</strong></a>
+     </div>
+
+     <ul class=" nav navbar-nav">
+      <li class="active"><a style="color:black;" href="/"> Home </a></li>
+      <li class="active"><a style="color:black;" href="/add.html"> Add </a></li>
+     </ul>
+
+     <ul class="nav navbar-nav navbar-right">
+      <li style="float:right"><a style="color:black;" href="/login.html"> Log In </a></li>
+      <li style="float:right"><a style="color:black;" href="/signup.html"> Sign up </a></li>
+     </ul>
+   </div>
+  </nav>
+
+  <div class="jumbotron">
+     <div class="container">
+       <ul class="alphabet" style="text-align:center;">
+
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('0-9')"><a class="alph">0-9</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('A')"><a class="alph">A</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('B')"><a class="alph">B</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('C')"><a class="alph">C</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('D')"><a class="alph">D</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('E')"><a class="alph">E</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('F')"><a class="alph">F</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('G')"><a class="alph">G</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('H')"><a class="alph">H</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('I')"><a class="alph">I</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('J')"><a class="alph">J</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('K')"><a class="alph">K</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('L')"><a class="alph">L</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('M')"><a class="alph">M</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('N')"><a class="alph">N</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('O')"><a class="alph">O</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('P')"><a class="alph">P</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('Q')"><a class="alph">Q</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('R')"><a class="alph">R</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('S')"><a class="alph">S</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('T')"><a class="alph">T</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('U')"><a class="alph">U</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('V')"><a class="alph">V</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('W')"><a class="alph">W</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('X')"><a class="alph">X</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('Y')"><a class="alph">Y</a></li>
+         <li ng-repeat="char in alphabet" class="ng-scope" onclick="filterSelection('Z')"><a class="alph">Z</a></li>
+       </ul>
+
+       <ul class="genres">
+         <li ng-repeat="genre in genres" class="ng-scope"><span ng-click="filterByGenre(genre)" class="ng-binding">Action</span></li>
+         <li><span onclick="filterSelection('adventure')">Adventure</span></li>
+         <li><span onclick="filterSelection('animation')">Animation</span></li>
+         <li><span onclick="filterSelection('children')">Children</span></li>
+         <li><span onclick="filterSelection('comedy')">Comedy</span></li>
+         <li><span onclick="filterSelection('crime')">Crime</span></li>
+         <li><span onclick="filterSelection('documentary')">Documentary</span></li>
+         <li><span onclick="filterSelection('drama')">Drama</span></li>
+         <li><span onclick="filterSelection('family')">Family</span></li>
+         <li><span onclick="filterSelection('fantasy')">Fantasy</span></li>
+         <li><span onclick="filterSelection('food')">Food</span></li>
+         <li><span onclick="filterSelection('home_and_garden')">Home and Garden</span></li>
+         <li><span onclick="filterSelection('horror')">Horror</span></li>
+         <li><span onclick="filterSelection('mini-series')">Mini-Series</span></li><br>
+         <li><span onclick="filterSelection('mystery')">Mystery</span></li>
+         <li><span onclick="filterSelection('news')">News</span></li>
+         <li><span onclick="filterSelection('reality')">Reality</span></li>
+         <li><span onclick="filterSelection('romance')">Romance</span></li>
+         <li><span onclick="filterSelection('sci-fi')">Sci-Fi</span></li>
+         <li><span onclick="filterSelection('sport')">Sport</span></li>
+         <li><span onclick="filterSelection('suspense')">Suspense</span></li>
+         <li><span onclick="filterSelection('talk_show')">Talk Show</span></li>
+         <li><span onclick="filterSelection('thriller')">Thriller</span></li>
+         <li><span onclick="filterSelection('travel')">Travel</span></li>
+       </ul>
+    </div>
+   </div>
+
+
+<div class="row justify-content-center" style="margin-left:200px;">
+  <div class="col-sm-10">
+    <div class="panel panel-default">
+      <div class="panel-heading">top 12 shows
+        <div class="pull-right">
+          <input class="search" type="text" placeholder="Search...">
+        </div>
+      </div>
+
+     <div class="panel-body">
+       <div class="row show-list">
+
+        <div class="filterDiv G">
+         <div class="col-sm-3">
+           <a href="Game_of_thronas.html">
+            <img src="img/assignment0.jpeg" width="98%"></a>
+           <div class="text-center">
+             <a href="Game_of_thronas.html">Game of Thrones</a>
+             <p>Episodes: 84</p>
+           </div>
+          </div>
+         </div>
+
+         <div class="filterDiv B">
+         <div class="col-sm-3">
+         <img src="img/assignment2.jpeg" width="100%">
+           <div class="text-center">
+             <a href="Breaking Bad">Breaking Bad</a>
+             <p>Episodes: 79</p>
+           </div>
+          </div>
+         </div>
+
+         <div class="col-sm-3">
+          <div class="filterDiv I">
+         <img src="img/assignment4.jpeg" width="100%" height="83%">
+           <div class="text-center">
+             <a href="Iron Man">Iron Man</a>
+             <p>Episodes: 125</p>
+           </div>
+          </div>
+         </div>
+
+
+         <div class="col-sm-3">
+          <div class="filterDiv A">
+         <img src="img/assignment5.jpeg" width="103%" height="75%">
+           <div class="text-center">
+             <a href="Avengers End Game">Avengers End Game</a>
+             <p>Episodes: 324</p>
+           </div>
+          </div>
+         </div>
+
+        </div>
+      </div>
+
+      <!-- Next row start-->
+
+      <div class="panel-body">
+        <div class="row show-list">
+
+          <div class="col-sm-3">
+            <div class="filterDiv C">
+          <img src="img/assignment6.jpeg" width="100%" height="83%">
+            <div class="text-center">
+              <a href="Captain Marvel">Captain Marvel</a>
+              <p>Episodes: 196</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="filterDiv I">
+          <img src="img/assignment7.jpeg" width="100%" height="83%">
+            <div class="text-center">
+              <a href="Inception">Inception</a>
+              <p>Episodes: 289</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="filterDiv F">
+          <img src="img/assignment8.jpeg" width="100%" height="83%">
+            <div class="text-center">
+              <a href="Fast & Furious">Fast & Furious</a>
+              <p>Episodes: 209</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="filterDiv H">
+          <img src="img/assignment1.jpeg" width="100%" height="83%">
+            <div class="text-center">
+              <a href="How I met your mother">How I met your mother</a>
+              <p>Episodes: 219</p>
+            </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- Next row start-->
+
+      <div class="panel-body">
+        <div class="row show-list">
+
+          <div class="col-sm-3">
+            <div class="filterDiv 0-9">
+          <img src="img/assignment9.jpg" width="100%" height="83%">
+            <div class="text-center">
+              <a href="Captain Marvel">12 STRONG</a>
+              <p>Episodes: 187</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="filterDiv J">
+          <img src="img/assignment12.jpeg" width="100%" height="83%">
+            <div class="text-center">
+              <a href="Captain Marvel">Jurassic World</a>
+              <p>Episodes: 316</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="filterDiv A">
+          <img src="img/assignment16.jpg" width="97%" height="83%">
+            <div class="text-center">
+              <a href="Captain Marvel">ARRIVAL</a>
+              <p>Episodes: 190</p>
+            </div>
+          </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="filterDiv T">
+          <img src="img/assignment19.jpg" width="102%" height="83%">
+            <div class="text-center">
+              <a href="Captain Marvel">THOR</a>
+              <p>Episodes: 208</p>
+            </div>
+          </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Next row start-->
+
+      <div class="panel-body">
+        <div class="row show-list">
+
+          <div class="col-sm-3">
+            <div class="filterDiv M">
+          <img src="img/assignment17.jpg" width="100%" height="83%">
+            <div class="text-center">
+              <a href="Captain Marvel">M:I Fallout</a>
+              <p>Episodes: 167</p>
+            </div>
+          </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="filterDiv J">
+          <img src="img/assignment20.jpg" width="100%" height="83%">
+            <div class="text-center">
+              <a href="Captain Marvel">Johnny English</a>
+              <p>Episodes: 96</p>
+            </div>
+          </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="filterDiv T">
+          <img src="img/assignment22.jpg" width="100%" height="83%">
+            <div class="text-center">
+              <a href="Captain Marvel">The new Romantic</a>
+              <p>Episodes: 102</p>
+            </div>
+          </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="filterDiv H">
+          <img src="img/assignment21.jpeg" width="100%" height="83%">
+            <div class="text-center">
+              <a href="Captain Marvel">HELL FEST</a>
+              <p>Episodes: 199</p>
+            </div>
+          </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript" src="/js/main.js"></script>
+</body>
+</html>
